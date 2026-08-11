@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>נוסחאות קבלה ומודל סטטיסטי - רפואה</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #008566;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --box-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+        }
+        .section-card {
+            background: var(--box-bg);
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .math-equation {
+            background-color: #eef2f5;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+            direction: ltr;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.1em;
+            margin: 15px 0;
+            color: #d63384;
+        }
+        .math-vars li { margin-bottom: 8px; }
+        
+        /* Calculator Styles */
+        .calculator-card {
+            background: #e8f5e9;
+            border: 2px solid #81c784;
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .input-group { margin-bottom: 15px; }
+        .input-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: normal;
+            cursor: pointer;
+        }
+        .calc-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+            margin-top: 10px;
+        }
+        .calc-btn:hover { background-color: #00604a; }
+        #calc_result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 4px;
+            border: 1px dashed var(--secondary-color);
+            font-size: 1.2em;
+        }
+        @media (max-width: 600px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>סיכום מקיף: נוסחאות קבלה ומודל סטטיסטי - רפואה</h1>
+
+    <div class="section-card">
+        <h2>1. נוסחת השקלול הכללית (הבסיס)</h2>
+        <p>הציון הסופי מורכב משקלול מוגדר מראש של הסכם הראשוני וציון המרק"ם המתוקנן:</p>
+        <div class="math-equation">Y = W<sub>sochem</sub> &middot; X<sub>1</sub> + W<sub>mor</sub> &middot; Z</div>
+        <ul class="math-vars">
+            <li><b>X<sub>1</sub></b>: סכם ראשוני נקי או ציון קוגניטיבי (שמוזן למערכת).</li>
+            <li><b>Z</b>: ציון מו"ר/מרק"ם <b>מתוקנן</b> (מותאם לסולם הסכם או להיפך).</li>
+            <li><b>W<sub>sochem</sub> ו-W<sub>mor</sub></b>: המשקלים הרשמיים שהאוניברסיטה קובעת (למשל 30% סכם ו-70% מרק"ם בתל אביב והטכניון, או 40-60 בעברית).</li>
+        </ul>
+    </div>
+
+    <div class="section-card">
+        <h2>2. שתי פרדיגמות של תקנון סטטיסטי</h2>
+        <p>כדי לשקלל ציון מו"ר/מרק"ם (שנע סביב 200) עם ציון סכם או ציון קוגניטיבי פנימי, האוניברסיטאות חייבות לתקנן את אחד הציונים כך שיתאים לסולם של השני. קיימות שתי שיטות עיקריות בארץ:</p>
+        
+        <h3>א. תקנון מרק"ם לסולם הפנימי (תל אביב, העברית)</h3>
+        <p>הסכם הראשוני / הציון הקוגניטיבי נשארים במשקל המקורי שלהם, וציון המרק"ם עובר המרה המשנה את ממוצע ה-200 וסטיית התקן ה-20 שלו לנתוני המחזור המקומי.</p>
+        <div class="math-equation">Y = W<sub>rishoni</sub> &middot; X<sub>1</sub> + [ (W<sub>mor</sub> &middot; &sigma;) / 20 ] &middot; X<sub>2</sub> + W<sub>mor</sub> &middot; (&mu; - 10 &middot; &sigma;)</div>
+        
+        <h3>ב. תקנון הסכם המקומי לסולם המרק"ם (טכניון)</h3>
+        <p>ציון המרק"ם נותר במשקל המקורי (למשל מקדם 0.7 בדיוק), בעוד הסכם המקומי עובר המרה כך שהממוצע שלו יהיה 200 וסטיית התקן תהיה 20.</p>
+        <div class="math-equation">Y = [ (20 &middot; W<sub>rishoni</sub>) / &sigma; ] &middot; X<sub>1</sub> + W<sub>mor</sub> &middot; X<sub>2</sub> + W<sub>rishoni</sub> &middot; (200 - 20 &middot; &mu; / &sigma;)</div>
+    </div>
+
+    <div class="section-card">
+        <h2>3. חיזוי ספי קבלה ופערים (מודל סטטיסטי)</h2>
+        <p>ספי הקבלה נחתכים לפי מכסת מקומות, מה שמתורגם למיקום באחוזונים מעל הממוצע, המיוצג על ידי ציון תקן (Z<sub>cutoff</sub>):</p>
+        <div class="math-equation">Cutoff = &mu; + Z<sub>cutoff</sub> &middot; &sigma;</div>
+        <p><b>חישוב ירידת רף בין גלי קבלה:</b></p>
+        <p>כאשר קבוצת מועמדים מפנה את מקומה (ביטולים בין גל ראשון לאחרון), היא יוצרת תזוזה קבועה באחוזונים (&Delta;Z). הירידה בפועל בנקודות סכם מושפעת ישירות מסטיית התקן של אותו מחזור:</p>
+        <div class="math-equation">Drop = &Delta;Z &middot; &sigma;</div>
+        <p><b>התובנה המרכזית:</b> במחזור עם שונות גבוהה (סטיית תקן גדולה), ירידת הסכם בנקודות תהיה משמעותית ורחבה יותר. במחזור צפוף ומכווץ (סטיית תקן קטנה), ה"נפילה" בנקודות בין הגלים תתכווץ ותהיה מתונה הרבה יותר.</p>
+    </div>
+
+    <!-- Interactive Universal Calculator -->
+    <div class="section-card calculator-card">
+        <h2>מחשבון סטטיסטיקה אוניברסלי (הנדסה לאחור)</h2>
+        <p>הזן את מקדמי משוואת הקבלה הסופית <b>(Y = A&middot;X<sub>1</sub> + B&middot;X<sub>2</sub> + C)</b> וגלה את הנתונים הסטטיסטיים של אותו מחזור מועמדים.</p>
+        
+        <div class="radio-group">
+            <strong>בחר את שיטת התקנון של האוניברסיטה:</strong><br>
+            <label><input type="radio" name="standard_type" value="to_rishoni" checked> <b>תקנון לסולם הסכם</b> (תל אביב / העברית) - <i>המרק"ם מומר לסולם המקומי</i></label>
+            <label><input type="radio" name="standard_type" value="to_mor"> <b>תקנון לסולם מרק"ם</b> (טכניון) - <i>הסכם מומר לסולם המרק"ם (מקדם המרק"ם יהיה לרוב עגול)</i></label>
+        </div>
+
+        <div class="calc-grid">
+            <div class="input-group">
+                <label>משקל רשמי - סכם/קוגניטיבי (W_rishoni):</label>
+                <input type="text" id="calc_w_rishoni" value="0.3" placeholder="למשל 0.3 או 0.4">
+            </div>
+            <div class="input-group">
+                <label>משקל רשמי - מרק"ם (W_mor):</label>
+                <input type="text" id="calc_w_mor" value="0.7" placeholder="למשל 0.7 או 0.6">
+            </div>
+        </div>
+
+        <div class="calc-grid">
+            <div class="input-group">
+                <label>מקדם הסכם/קוגניטיבי במשוואה (A):</label>
+                <input type="text" id="calc_a" placeholder="לדוגמה: 0.3 או 2.55">
+            </div>
+            <div class="input-group">
+                <label>מקדם המרק"ם במשוואה (B):</label>
+                <input type="text" id="calc_b" placeholder="לדוגמה: 0.3289 או 0.7">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>האיבר החופשי (C):</label>
+            <input type="text" id="calc_c" placeholder="לדוגמה: 451.539 או -177">
+        </div>
+        
+        <button class="calc-btn" onclick="calculateStats()">חשב נתוני מחזור</button>
+        
+        <div id="calc_result" style="display: none;"></div>
+    </div>
+
+    <script>
+        function parseFraction(val) {
+            if(!val) return NaN;
+            val = val.toString().trim();
+            if(val.includes('/')) {
+                let parts = val.split('/');
+                return parseFloat(parts[0]) / parseFloat(parts[1]);
+            }
+            return parseFloat(val);
+        }
+
+        function calculateStats() {
+            const wRishoni = parseFraction(document.getElementById('calc_w_rishoni').value);
+            const wMor = parseFraction(document.getElementById('calc_w_mor').value);
+            const A = parseFraction(document.getElementById('calc_a').value);
+            const B = parseFraction(document.getElementById('calc_b').value);
+            const C = parseFraction(document.getElementById('calc_c').value);
+            const standardType = document.querySelector('input[name="standard_type"]:checked').value;
+            const resDiv = document.getElementById('calc_result');
+
+            resDiv.style.display = "block";
+
+            if (isNaN(wRishoni) || isNaN(wMor) || isNaN(A) || isNaN(B) || isNaN(C)) {
+                resDiv.innerHTML = "<span style='color:red;'>שגיאה: נא להזין ערכים תקינים (מספרים או שברים) בכל השדות.</span>";
+                return;
+            }
+
+            let sigma = 0;
+            let mu = 0;
+
+            if (standardType === 'to_rishoni') {
+                // תל אביב או העברית (תקנון מרק"ם לסולם מקומי)
+                // B = (W_mor * sigma) / 20 => sigma = (B * 20) / W_mor
+                sigma = (B * 20) / wMor;
+                // C = W_mor * (mu - 10 * sigma) => mu = (C / W_mor) + 10 * sigma
+                mu = (C / wMor) + (10 * sigma);
+            } else {
+                // טכניון (תקנון סכם מקומי לסולם מרק"ם)
+                // A = (20 * W_rishoni) / sigma => sigma = (20 * W_rishoni) / A
+                sigma = (20 * wRishoni) / A;
+                // C = W_rishoni * 200 - A * mu => mu = (W_rishoni * 200 - C) / A
+                mu = (wRishoni * 200 - C) / A;
+            }
+
+            resDiv.innerHTML = `
+                <strong>תוצאות החישוב:</strong><br>
+                <ul>
+                    <li>סטיית תקן של המחזור (&sigma;): <strong>${sigma.toFixed(4)}</strong></li>
+                    <li>ממוצע ציוני הבסיס של המחזור (&mu;): <strong>${mu.toFixed(4)}</strong></li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>
